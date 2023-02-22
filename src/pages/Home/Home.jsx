@@ -29,7 +29,7 @@ export const Home = () => {
             <ul>
               {trending.map(movie => (
                 <li key={movie.id} className={style.listItem}>
-                  <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+                  <Link to={`/movies/${movie.id}`} className={style.Link}>{movie.title}</Link>
                 </li>
               ))}
             </ul>

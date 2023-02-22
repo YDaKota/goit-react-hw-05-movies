@@ -29,11 +29,14 @@
   .Link {
     display: inline-block;
     text-decoration: none;
-    padding: 12px;
+    padding: 8px;
     font-weight: 500;
     color: #2a363b;
     font-size: 22px;
     margin-left: 20px;
+    margin-top: 15px;
+    border: 1px solid #2a363b;
+    border-radius: 5px;
   }
 
   h2 {

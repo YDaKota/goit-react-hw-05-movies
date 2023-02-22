@@ -25,3 +25,24 @@
     margin-left: 30px;
     border-radius: 3px;
 }
+
+.MovieItems {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.MovieTitle {
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    max-width: 400px;
+}
+
+.Link {
+    text-decoration: none;
+    margin-bottom: 15px;
+}

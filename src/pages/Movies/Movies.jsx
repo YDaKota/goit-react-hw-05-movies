@@ -46,7 +46,7 @@ export const Movies = () => {
 
 
     return (
-        <div className="container">
+        <div>
             <form onSubmit={onSubmit} className={styles.SearchBar}>
                 <div className={styles.SearchForm}>
                     <input
@@ -59,23 +59,19 @@ export const Movies = () => {
                 <button type="submit" onClick={onSubmit} className={styles.SearchForm_button}>Search</button>
             </form>
             {movies && (
-                <ul>
+                <ul className={styles.MovieItems}>
                 {movies.map(movie => {
-                    let posterPath;
-                    if (movie.poster_path) {
-                    posterPath = `https://image.tmdb.org/t/p/w400/${movie.poster_path}`;
-                    } else {
-                    posterPath =
-                        'https://i.pinimg.com/originals/a0/57/48/a05748c84d7093e382c560bbc57665ce.jpg';
-                    }
+                    let posterPath = `https://image.tmdb.org/t/p/w400/${movie.poster_path}`;
+                    
                     return (
                     <Link
                         key={movie.id}
                         to={`${movie.id}`}
                         state={{ from: location }}
+                        className={styles.Link}
                     >
-                        <img src={posterPath} width="400" alt={movie.title} />
-                        <h3>{movie.title}</h3>
+                        <img src={posterPath} width='400px' alt={movie.title} />
+                        <h3 className={styles.MovieTitle}>{movie.title}</h3>
                     </Link>
                     );
                 })}

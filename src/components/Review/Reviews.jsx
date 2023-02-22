@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieReviews } from '../../services/api';
+import styles from './Reviews.module.css';
+
 
 export const Reviews = () => {
     const { movieId } = useParams();
@@ -8,24 +10,24 @@ export const Reviews = () => {
 
     useEffect(() => {
         getMovieReviews(Number(movieId))
-          .then(({ results }) => setReviews(results))
-          .catch(err => console.log(err));
+            .then(({ results }) => setReviews(results))
+            .catch(err => console.log(err));
     }, [movieId]);
 
     return (
         <>
             <h1>Reviews</h1>
-            <ul>
+            <ul className={styles.Reviews}>
                 {reviews.map(review => (
-                    <div key={review.id}>
-                        <p>
+                    <li key={review.id} className={styles.ReviewsItem}>
+                        <p className={styles.Description}>
                             <b>Author:</b> {review.author}
                         </p>
-                        <p>
+                        <p className={styles.Description}>
                             <b>Content:</b> {review.content}
                         </p>
                         <hr />
-                    </div>
+                    </li>
                 ))}
             </ul>
         </>

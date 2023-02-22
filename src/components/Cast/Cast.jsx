@@ -37,11 +37,11 @@ export const Cast = () => {
                 <h1>Loading...</h1>
             ) : (
                 <>
-                    <h1>Cast</h1>
                     <ul className={styles.Cast}>
                         {actors.map(actor => (
                             <li key={actor.id} className={styles.CastItem}>
-                                <p>{actor.name}</p>
+                                <img src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`} width="200" height="300" alt={actor.name} />
+                                <p className={styles.ActorName}>{actor.name}</p>
                             </li>
                         ))}
                     </ul>

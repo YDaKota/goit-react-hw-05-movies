@@ -1,18 +1,24 @@
 import PropTypes from 'prop-types';
+import styles from './MovieDetailsCard.module.css';
 
 export const MovieCard = ({ movie }) => {
-    const { title, poster_path, release_date } = movie;
-    console.log(movie);
-    
+    const { title, poster_path, release_date, overview } = movie;
+
+    let releaseDate = new Date(release_date).getFullYear();   
 
     return (
-        <div className="movie-card">
-            <div className="movie-card-image">
-                <img src={poster_path} alt={title} />
-            </div>
-            <div className="movie-card-info">
-                <div className="movie-card-title">{title}</div>
-                <div className="movie-card-year">{release_date}</div>
+        <div className={styles.movieCard}>
+            <img src={`https://image.tmdb.org/t/p/w400/${poster_path}`} width='300px' alt={title} />
+            <div className={styles.movieCardInfo}>
+                <div>
+                    <h3 className={styles.movieCardTitle}>Title:</h3>{title}
+                </div>
+                <div>
+                    <h3 className={styles.movieCardTitle}>Overview:</h3>{overview}
+                </div>
+                <div>
+                    <h3 className={styles.movieCardTitle}>Release date:</h3>{releaseDate}
+                </div>
             </div>
         </div>
     );

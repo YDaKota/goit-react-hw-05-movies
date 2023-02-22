@@ -36,21 +36,12 @@ const MovieDetails = () => {
                         <NavLink to={'cast'} state={location.state} className={styles.Link}>Cast</NavLink>
                         <NavLink to={'reviews'} state={location.state} className={styles.Link}>Reviews</NavLink>
                     </div>
-                    {/* <h1>{movie.title}</h1>
-                    <img src={movie.poster} alt={movie.title} />
-                    <p>{movie.description}</p> */}
                     <Suspense fallback={null}>
                         <Outlet />
                     </Suspense>
                 </div>
                 
             )}
-            {/* <h1>{movie.title}</h1>
-            <img src={movie.poster} alt={movie.title} />
-            <p>{movie.description}</p>
-            <p>{movie.release_date}</p>
-            <p>{movie.vote_average}</p>
-            <p>{movie.vote_count}</p> */}
         </div>
     );
 };
