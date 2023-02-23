@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { getTrending } from '../../services/api.jsx';
 import style from './Home.module.css';
 
 
 export const Home = () => {
   const [trending, setTrending] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     async function moviesTrending() {
@@ -29,7 +30,7 @@ export const Home = () => {
             <ul>
               {trending.map(movie => (
                 <li key={movie.id} className={style.listItem}>
-                  <Link to={`/movies/${movie.id}`} className={style.Link}>{movie.title}</Link>
+                  <Link to={`/movies/${movie.id}`} state={{ from: location }} className={style.Link}>{movie.title}</Link>
                 </li>
               ))}
             </ul>

@@ -29,20 +29,20 @@ export const Movies = () => {
 
     const onSubmit = e => {
         if (!input) {
-          alert('Please enter a movie name');
+            alert('Please enter a movie name');
         }
         e.preventDefault();
         setSearchParams(input !== '' ? { filter: input } : {});
         setInput('');
-      };
+        };
 
-      const onChangeInput = value => {
+    const onChangeInput = value => {
         setInput(value);
-      };
+    };
     
-      if (!movies) {
+    if (!movies) {
         return null;
-      }
+    }
 
 
     return (
@@ -76,8 +76,6 @@ export const Movies = () => {
                     );
                 })}
                 </ul>
-
-                
             )}
         </div>
     );

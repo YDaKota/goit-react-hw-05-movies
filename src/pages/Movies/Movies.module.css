@@ -2,14 +2,14 @@
     top: 0;
     left: 0;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-      0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-  }
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
 
-  .SearchForm {
+.SearchForm {
     display: inline-block;
-  }
-  
-  .SearchForm_button {
+}
+
+.SearchForm_button {
     border: none;
     width: 100px;
     height: 30px;

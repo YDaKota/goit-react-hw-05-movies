@@ -11,6 +11,8 @@ const MovieDetails = () => {
     const [error, setError] = useState(null);
     const { movieId } = useParams();
     const location = useLocation();
+    const backLink = location.state?.from ?? '/';
+    
 
     useEffect(() => {
         const getMovie = async () => {
@@ -26,7 +28,7 @@ const MovieDetails = () => {
 
     return (
         <div>
-            <Link to="location.state?.from ?? '/'" className={styles.Button}>Go back</Link>
+            <Link to={backLink} className={styles.Button}>Go back</Link>
             {error && <div>Something get wrong</div>}
             {movie && (
                 <div>

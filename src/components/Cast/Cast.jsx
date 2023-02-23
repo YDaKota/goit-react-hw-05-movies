@@ -12,11 +12,11 @@ export const Cast = () => {
     useEffect(() => {
         setLoading(true);
         getMovieCredits(Number(movieId))
-          .then(res => {
+            .then(res => {
                 setActors(res.cast);
                 setLoading(false);
             })
-          .catch(err => {
+            .catch(err => {
                 console.log(err);
                 setLoading(false);
             });
@@ -28,8 +28,6 @@ export const Cast = () => {
     if (!actors) {
         return <div>No actors found</div>;
     }
-
-    // const { cast } = actors;
 
     return (
         <>
